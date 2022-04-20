@@ -1,0 +1,1 @@
+int getSquare(int num); 
