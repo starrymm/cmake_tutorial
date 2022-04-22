@@ -10,7 +10,6 @@ OPTION(USE_MYMATH "Use tutorail provided math implementation" ON)
 IF(USE_MYMATH)
     ADD_SUBDIRECTORY(math)
     LIST(APPEND EXTRA_LIBS MathFunctions)
-    LIST(APPEND EXTRA_INCLUDES ${PROJECT_SOURCE_DIR}/math)
 ENDIF()
 
 #添加配置文件，编译后 TutorialConfig.h.in 将被转化成 TutorialConfig.h 文件 
@@ -32,7 +31,6 @@ TARGET_INCLUDE_DIRECTORIES(${PROJECT_NAME}
                         PUBLIC
                         #存放编译产物会放到该路径,build路径
                         ${PROJECT_BINARY_DIR}                         
-                        ${EXTRA_INCLUDES}
                         )
 
 #添加库文件

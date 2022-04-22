@@ -6,3 +6,8 @@ AUX_SOURCE_DIRECTORY(. DIR_LIBS_SRCS)
 ADD_LIBRARY(MathFunctions ${DIR_LIBS_SRCS})
 
 
+#添加库的使用要求
+# INTERFACE是指消费者需要，生产者不需要的东西
+TARGET_INCLUDE_DIRECTORIES(MathFunctions
+        INTERFACE ${CMAKE_CURRENT_SOURCE_DIR}
+        )
