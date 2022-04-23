@@ -11,3 +11,10 @@ ADD_LIBRARY(MathFunctions ${DIR_LIBS_SRCS})
 TARGET_INCLUDE_DIRECTORIES(MathFunctions
         INTERFACE ${CMAKE_CURRENT_SOURCE_DIR}
         )
+
+#安装库文件和头文件
+INSTALL(TARGETS MathFunctions 
+        DESTINATION lib)
+INSTALL(FILES MathFunctions.h 
+        DESTINATION include)
+
